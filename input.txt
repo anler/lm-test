@@ -1,0 +1,5 @@
+2 Book at 12.49 0
+3 Music CD at 14.99 10
+1 Imported Box of Chocolates at 10.00 5
+2 Imported Music CDs at 14.99 15
+4 Chocolate Bar at 0.85 0

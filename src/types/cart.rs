@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use super::{Item, Tax};
+use super::Item;
 
 /// A shopping cart that keeps track of items and their taxes.
 pub struct Cart {
@@ -119,6 +119,7 @@ fn as_real(cents: u32) -> f64 {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::types::*;
 
     #[test]
     fn test_cart() {
