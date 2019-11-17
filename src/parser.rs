@@ -1,8 +1,9 @@
+/// Simplistic parser of lines describing an item to be added a cart.
 use std::collections::VecDeque;
 
 use super::{Item, Tax};
 
-/// Parse an input line of the form: {item quantity} {item id} {item price}
+/// Parse an input line of the form: {item quantity} {item id} {item price} {tax}
 pub fn parse(line: &String) -> Result<(u32, Item), &'static str> {
     let mut parts: VecDeque<&str> = line.split_whitespace().collect();
     let quantity = parts
