@@ -22,6 +22,10 @@ Sales Taxes 9.50
 Total 122.83
 ```
 
+## Implementation notes
+
+The `input.txt` file has been extended to include the tax for each item. This is done in order to simplify parsing. With more information on the grammar of the input though improving the parser to automatically calculate the tax from the kind of good would be trivial.
+
 
 
 
