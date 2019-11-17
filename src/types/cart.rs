@@ -60,11 +60,7 @@ impl Cart {
     ///
     /// None means that some price overflowed.
     pub fn total(&self) -> Option<f64> {
-        // let (total, _) = self.totals()?;
         self.totals().map(|(total, _)| as_real(total))
-        // let total = price.checked_add(taxes)?;
-
-        // Some(total as f64 / 100f64)
     }
 
     /// Return the part of total that are taxes.
