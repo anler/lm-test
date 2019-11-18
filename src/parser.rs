@@ -39,3 +39,37 @@ pub fn parse(line: &String) -> Result<(u32, Item), &'static str> {
 
     Ok((quantity, Item::new(id, price, tax)))
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_parse_correct_input() {
+        let input = "2 Book at 12.49 0".to_string();
+        let (quantity, item) = parse(&input).unwrap();
+
+        assert_eq!(2, quantity);
+        assert_eq!("Book", item.id());
+        assert_eq!(1249, item.price());
+        assert_eq!(Tax::Tax0, item.tax());
+    }
+
+    #[test]
+    fn test_parse_incorrect_input() {
+        assert_eq!(
+            "Failed to parse quantity.",
+            parse(&"Book".to_string()).unwrap_err()
+        );
+
+        assert_eq!(
+            "Failed to parse tax.",
+            parse(&"1 Book".to_string()).unwrap_err()
+        );
+
+        assert_eq!(
+            "Failed to parse price.",
+            parse(&"1 Book 0".to_string()).unwrap_err()
+        );
+    }
+}
